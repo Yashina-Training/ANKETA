@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>anketa_oper</title>
+</head>
+
+<body>
+  <script>
+    let surname = prompt('Ваша фамилия?');
+    let name = prompt('Ваше имя?');
+    let patronymic = prompt('Ваше отчество?');
+    let age = prompt('Ваш возраст?');
+    let ageInDays = parseInt(age) * 365;
+    let future = parseInt(age) + 5;
+    let genderConfirm = confirm('Ваш пол - мужской?');
+    let gender = (genderConfirm) ? 'мужской' : 'женский';
+    let retirementAge = (genderConfirm && age < 63) ? 'нет' :
+      (genderConfirm && age >= 63) ? 'да' :
+        (!genderConfirm && age < 58) ? 'нет' :
+          (!genderConfirm && age >= 58) ? 'да' : '';
+
+
+
+    alert('Ваше ФИО: ' + surname + ' ' + name + ' ' + patronymic + '\r\n'
+      + 'Ваш возраст в годах: ' + age + '\r\n'
+      + 'Ваш возраст в днях: ' + ageInDays + '\r\n'
+      + 'Через 5 лет Вам будет: ' + future + '\r\n'
+      + 'Ваш пол: ' + gender + '\r\n'
+      + 'Вы на пенсии: ' + retirementAge);
+  </script>
+
+</body>
+
+</html>
